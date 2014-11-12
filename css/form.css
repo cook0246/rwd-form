@@ -1,9 +1,36 @@
+.clearfix:after{
+    content: "."; 
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix { 
+    display: inline-block;
+}
+* html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
 
+*{
+    box-sizing: border-box;
+}
 /*******************************************
 				Defaults
 
 Remember to use something like type-scale.com 
 to get your font sizes
+
+
+CREDIT for icons goes to :
+openiconic:  https://useiconic.com/open/ 
+
+
+
 *******************************************/
 *{
 	padding:0;
@@ -12,56 +39,224 @@ to get your font sizes
 html,body{
 
 }
-h1{
-
-}
-h2{
-
-}
-p{
-
+h1, h2, p{
+    background-color: #000;
+    color: #FFFF00;
+    text-align: center;
+    font-family: helveticaneue-thin,helvetica,arial,sans-serif;
 }
 
 /*******************************************
 				Layout
 *******************************************/
 .wrapper{
-	
+    background: #000;
+    margin: 0 auto;
+    border: 0.2rem solid #FFFF00;
 }
 .masthead{
 	
 }
-.main{
-	
-}
-.foot{
-	
+.main h2, .main p, .foot{
+    color: white;
+    padding-bottom: 0.5rem;
 }
 
 /*******************************************
 				Form Styles
 *******************************************/
-.formBox{
-	
-}
-.buttons{
-	
-}
-label{
-	
-}
+
 input[type=text],
 input[type=number],
 input[type=date]{
-	
+    background: #2987CB;
+    color: #FFFF00;
+    font-family: helveticaneue-thin,helvetica,arial,sans-serif;
+    text-align: center;
+    height: 3.5rem;
+    font-size: 1.5rem;
 }
-input[type=submit],
-input[type=reset]{
-	
+
+.formBox{
+    background: #C45957;
+    color: white;
+	padding: 0.5rem;
 }
+
+label{
+    font-family: helveticaneue-thin,helvetica,arial,sans-serif;
+	float: left;
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+}
+output{
+    font-family:sans-serif;
+    color: #FFFF00;
+}
+
+#departure_dt,#return_dt{
+    float: right;
+    font-size: 1rem;
+    width: 45%; 
+}
+#num_adults{
+    font-size: 2rem;
+    float: right;
+}
+
+/* ------- MAX PRICE -------   */
+#thePrice{
+    float: left;
+    width: 6rem;
+    font-size: 3rem; 
+}
+#priceScroll{
+    float: right;
+    height: 3.5rem;
+    width: 30%;
+}
+
 
 
 /*******************************************
-				Image Styles
+                Buttons
 *******************************************/
 
+#btnRow{
+    width: 48.6%;
+    margin: 0 25%;
+    padding: 0.5rem 1rem;
+}
+.btn{
+    font-size: 2rem;
+    width: 100%;
+    margin: 0.5rem auto;
+}
+#btnReset{
+    float: left;
+}
+#btnSubmit{
+    float: right;
+}
+.active{
+    opacity: 1.0;
+    color: blue;
+}
+.inactive{
+    opacity: 0.9;
+}
+/*******************************************
+				Image Styles
+*******************************************/
+.icon{
+    background: #FFFF00;
+    float: left;
+    padding: 0.2rem;
+    width: 60px;
+    border: 2px solid #2987CB;
+    border-radius: 50%; 
+}
+
+
+
+
+/*******************************************
+            Responsive Columns
+*******************************************/
+@media screen and (max-width: 500px){
+    .formBox{
+        width: 100%;
+    }
+       #departure, #destination{
+        width: 55%;
+        float: right;
+       }
+    
+}
+
+@media screen and (min-width: 500px) and (max-width: 779px){
+    .wrapper{
+        width: 500px;
+    }
+    .formBox{
+        width: 48.6%;
+        margin: 0 0.49%;
+    }
+    .icon{
+        float: right;
+        margin-bottom: 0.5rem;
+    }
+    
+    #departure, #destination{
+        width: 100%;
+        float: right;
+    }
+    
+    #departure_dt, #return_dt, #num_adults{
+        width: 100%; 
+    }
+    
+    #icon_depart{
+        margin-left: 2%;
+    }
+    #icon_return{
+        margin-left:10%
+    }
+    #adultLabel{
+        font-size: 1.2rem;
+    }
+    #priceIcon{
+        float: left;
+        width: 20%
+    }
+    #priceLabel{
+        width: 100%;
+        line-height: 3.35rem;
+    }
+    #thePrice{
+        float: left;
+        width: 70%;
+    }
+    #priceScroll{
+        width: 100%;
+        height: 1rem;
+    }
+    
+}
+
+@media screen and (min-width: 780px){
+    .wrapper{
+        width: 780px;
+    }
+    .formBox {
+        margin-left: 0.1%;
+        width: 49.6%;
+    }
+    
+    .icon{
+        border-color: transparent;
+        border-radius: 0;
+        
+    }
+    
+    #departure, #destination{
+        width: 57%;
+        float: right;
+    }
+    
+    #departure_dt, #return_dt, #num_adults{
+        width: 45%; 
+    }
+    
+    #icon_depart{
+        margin-left: 2%;
+    }
+    #icon_return{
+        margin-left:10%
+    }
+    #adultLabel{
+        font-size: 1.2rem;
+    }
+    
+    
+}

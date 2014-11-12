@@ -3,69 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Responsive Travel Form</title>
-	<link rel="stylesheet" href="css/form.css" />
+	<link rel="stylesheet" href="css/form.css">
+    
+    <script src="js/main.js"></script>
+    
 </head>
 <body>
 	<div class="wrapper">
 		<header class="masthead">
-			<h1>Hotel-O-City</h1>
+			<h1>Travel Planner</h1>
 		</header>
-		<section class="main">
-			<h2>A Heading That You Can Change</h2>
-			<p>Some information about the form, the page, and/or the site.</p>
+		<section class="main clearfix">
+			<h2>Responsive Travel Form</h2>
+			<p>Plan out your trip here and set sail!</p>
 			<form name="travelForm" id="travelForm" action="#" method="post" enctype="application/x-www-form-urlencoded">
 				
-				<div class="formBox">
-					<label for="departure"></label>
-					<input type="text" name="departure" id="departure" placeholder="departure city" />
+				<div class="formBox col clearfix">
+					<label id="depLabel" for="departure">Departure</label>
+                        <img class="icon" src="img/home.svg">
+					<input type="text" name="departure" id="departure" placeholder="enter the city here" />
 				</div>
-				<div class="formBox">
-					<label for="destination"></label>
-					<input type="text" name="destination" id="destination" placeholder="destination city" />
+				<div class="formBox col clearfix">
+					<label id="desLabel" for="destination">Destination</label>
+                        <img class="icon" src="img/target.svg">
+					<input type="text" name="destination" id="destination" placeholder="enter the city here" />
 				</div>
 				
-				<div class="formBox">
-					<label for="departure_dt"></label>
-					<input type="date" name="departure_dt" id="departure_dt" placeholder="" />
+				<div class="formBox col clearfix" id="date1">
+					<label for="departure_dt">Departure Date</label>
+                        <img id="icon_depart" class="icon" src="img/calendar.svg">
+                    <input type="date" name="departure_dt" id="departure_dt" placeholder="" />
 				</div>
-				<div class="formBox">
-					<label for="return_dt"></label>
+				<div class="formBox col clearfix" id="date2">
+					<label for="return_dt">Return Date</label>
+                        <img id="icon_return" class="icon" src="img/calendar.svg">
 					<input type="date" name="return_dt" id="return_dt" placeholder="" />
 				</div>
 				
-				<div class="col">
-					<label for="num_adults"></label>
-					<input type="number" name="num_adults" id="num_adults" min="1" max="10" step="1" />
-					<!-- OR 
-					<select name="num_adults" id="num_adults">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select>
-					-->
+				<div class="formBox col clearfix" id="adultBox">
+					<label id="adultLabel" for="num_adults">Number of Adults</label>
+                        <img class="icon" src="img/people.svg">
+					<input type="number" name="num_adults" id="num_adults" min="1" max="10" step="1" placeholder="1-10"/>
+					
 				</div>
-				<div class="col">
-					<label for="price" title=""Max. price per person>Max. Price</label>
-					<input type="range" name="price" id="price" min="100" max="2000" value="1000"/>
-				</div>
+				<div class="formBox col clearfix" id="priceBox">
+                       <label id="priceLabel" title="Max. price per person">Max. Price</label>
+                        <img class="icon" id="priceIcon" src="img/dollar.svg">
+                        <output for="price" name="thePrice" id="thePrice">1000</output>
+                        <input type="range" name="price" id="priceScroll" min="100" max="2000" value="1000" step="100" oninput="thePrice.value=priceScroll.value"/>
+                </div>
+                
+                
 				
-				<div class="col buttons">
-					<input type="reset" name="btnReset" id="btnReset" value="Reset" />
-					<input type="submit" name="btnSubmit" id="btnSubmit" value="Submit" />
+				<div id="btnRow" class="formBox clearfix">
+					<input type="reset" name="btnReset" class="btn inactive clearfix" id="btnReset" value="Reset" />
+					<input type="submit" name="btnSubmit" class="btn inactive clearfix" id="btnSubmit" value="Submit" />
 				</div>
+     
 			</form>
+            
 		</section>
+        
 		<footer class="foot">
 			<p>&copy; 2014 Chicken Stuff Inc.</p>
 		</footer>
 	</div>
-	<script src="js/main.js"></script>
+	
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    
 </body>
 </html>
